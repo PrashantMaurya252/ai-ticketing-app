@@ -11,7 +11,18 @@ export const sendMail = async(to,subject,text)=>{
                 pass:process.env.MAILTRAP_SMTP_PASS
             }
         })
+
+        const info = await transporter.sendMail({
+            from:"Ingest",
+            to,
+            subject,
+            text
+        })
+
+        console.log("MEssage Sent",info.messageId)
+        return info
     } catch (error) {
-        
+        console.log("send mail error",error.message)
+        throw  Error
     }
 }
