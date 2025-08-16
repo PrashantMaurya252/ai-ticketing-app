@@ -1,9 +1,9 @@
 import React from 'react'
 
-const tickets = () => {
+const Tickets = () => {
   return (
-    <div>tickets</div>
+    <div>Tickets</div>
   )
 }
 
-export default tickets
+export default Tickets
